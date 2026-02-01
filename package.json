@@ -1,0 +1,11 @@
+{
+  "name": "car-telemetry-3d-studio",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "db:generate": "pnpm -C packages/db prisma:generate",
+    "db:migrate": "pnpm -C packages/db prisma:migrate",
+    "db:seed": "pnpm -C packages/db prisma:seed",
+    "db:studio": "pnpm -C packages/db prisma:studio"
+  }
+}
