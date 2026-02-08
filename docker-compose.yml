@@ -39,6 +39,9 @@ services:
     ports:
       - "3001:3000"
     env_file: .env
+    environment:
+      PORT: 3000
+      DATABASE_URL: postgresql://telemetry:telemetry_pw@postgres:5432/telemetry_db
     depends_on:
       postgres:
         condition: service_healthy
@@ -52,8 +55,15 @@ services:
     ports:
       - "3000:3000"
     depends_on:
+      postgres:
+        condition: service_healthy
       api:
         condition: service_started
+    env_file: .env
+    environment:
+      INTERNAL_API_URL: http://api:3000
+      NEXT_PUBLIC_API_URL: http://localhost/app
+      DATABASE_URL: postgresql://telemetry:telemetry_pw@postgres:5432/telemetry_db
 
   nginx:
     image: nginx:alpine

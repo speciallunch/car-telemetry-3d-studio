@@ -7,7 +7,7 @@ type Vehicle = {
 };
 
 export default async function VehiclesPage() {
-  const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
+  const base = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_API_BASE_URL!;
   const res = await fetch(`${base}/vehicles`, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to fetch vehicles");
   const vehicles: Vehicle[] = await res.json();

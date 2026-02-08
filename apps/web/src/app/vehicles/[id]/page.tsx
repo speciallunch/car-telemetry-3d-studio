@@ -12,7 +12,7 @@ export default async function VehicleTelemetryPage({
 }: {
   params: { id: string };
 }) {
-  const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
+  const base = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_API_BASE_URL!;
   const res = await fetch(`${base}/vehicles/${params.id}/telemetry?limit=10`, {
     cache: "no-store"
   });
