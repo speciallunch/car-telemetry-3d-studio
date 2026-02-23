@@ -8,7 +8,7 @@ services:
       POSTGRES_PASSWORD: telemetry_pw
       POSTGRES_DB: telemetry_db
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:
@@ -40,8 +40,7 @@ services:
       - "3001:3000"
     env_file: .env
     environment:
-      PORT: 3000
-      DATABASE_URL: postgresql://telemetry:telemetry_pw@postgres:5432/telemetry_db
+      - DATABASE_URL=postgresql://telemetry:telemetry_pw@postgres:5432/telemetry_db
     depends_on:
       postgres:
         condition: service_healthy
