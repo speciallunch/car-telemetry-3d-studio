@@ -42,9 +42,6 @@ Thumbs.db
 # Prisma
 packages/db/prisma/migrations/
 
-# Docker
-.dockerignore
-
 # Temporary files
 *.tmp
 *.temp
