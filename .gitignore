@@ -1,1 +1,57 @@
+# dependencies
 node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# build outputs
+dist
+build
+.next
+out
+
+# turbo
+.turbo
+
+# env files
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# testing
+coverage
+.nyc_output
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea
+*.sublime-workspace
+*.swp
+*.swo
+
+# misc
+*.pem
+*.tsbuildinfo
+next-env.d.ts
+
+# database
+packages/database/generated
